@@ -1,3 +1,5 @@
+export const runtime = 'edge';
+export const dynamic = 'force-dynamic';
 import { Frog, Button } from "frog";
 import type { NextRequest } from "next/server";
 import { handle } from "frog/next";
