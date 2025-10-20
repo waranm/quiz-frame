@@ -3,7 +3,7 @@ export const dynamic = 'force-dynamic';
 import { Frog, Button } from "frog";
 import type { NextRequest } from "next/server";
 import { handle } from "frog/next";
-import type { ReactNode } from "react";
+
 
 const QUESTIONS = [
   {
@@ -107,7 +107,7 @@ app.frame("/", (c) => {
             {current.q}
           </div>
         </div>
-      )as ReactNode,
+      )as JSX.Element,
       intents: [
         <Button value={current.a[0].val}>{current.a[0].label}</Button>,
         <Button value={current.a[1].val}>{current.a[1].label}</Button>,
@@ -146,7 +146,7 @@ app.frame("/", (c) => {
           {result.blurb}
         </div>
       </div>
-    )as ReactNode,
+    )as JSX.Element,
     intents: [
       <Button action="post" target="/reset">Play again</Button>,
       <Button
@@ -183,7 +183,7 @@ app.frame("/reset", (c) => {
       >
         Ready? Tap to start →
       </div>
-    )as ReactNode,
+    )as JSX.Element,
     intents: [<Button action="post" target="/">Start</Button>],
   });
 });
